@@ -1,0 +1,122 @@
+{
+  "frequencies_ghz": {
+    "UHF": [
+      0.5
+    ],
+    "L": [
+      1.5
+    ],
+    "S": [
+      3.0
+    ],
+    "C": [
+      6.0
+    ],
+    "X": [
+      10.0
+    ],
+    "K": [
+      22.23508
+    ],
+    "Ka": [
+      35.0
+    ]
+  },
+  "altitudes_ft": [
+    0,
+    5000,
+    10000
+  ],
+  "path_geometry": "horizontal",
+  "slant_end_altitudes_ft": [
+    5000,
+    10000
+  ],
+  "slant_integration_steps": 64,
+  "density_scales": [
+    0.8,
+    1.0,
+    1.2
+  ],
+  "air_densities_kg_m3": null,
+  "temperature_k": null,
+  "weather_cases": [
+    {
+      "name": "clear",
+      "relative_humidity_pct": 50,
+      "liquid_water_g_m3": 0,
+      "cloud_path_fraction": 1
+    },
+    {
+      "name": "medium_fog",
+      "relative_humidity_pct": 100,
+      "liquid_water_g_m3": 0.05,
+      "cloud_path_fraction": 1
+    },
+    {
+      "name": "thick_fog",
+      "relative_humidity_pct": 100,
+      "liquid_water_g_m3": 0.5,
+      "cloud_path_fraction": 1
+    }
+  ],
+  "ranges": [
+    {
+      "value": 1000,
+      "unit": "ft"
+    },
+    {
+      "value": 3000,
+      "unit": "ft"
+    },
+    {
+      "value": 1,
+      "unit": "mi"
+    },
+    {
+      "value": 5,
+      "unit": "mi"
+    },
+    {
+      "value": 10,
+      "unit": "mi"
+    },
+    {
+      "value": 50,
+      "unit": "mi"
+    }
+  ],
+  "pulse_durations_ns": [
+    10,
+    100,
+    1000
+  ],
+  "peak_powers_w": [
+    1000.0,
+    1000000.0,
+    1000000000.0
+  ],
+  "initial_beam_diameters_m": [
+    0.2,
+    1.0,
+    2.0
+  ],
+  "divergence_mode": "range_presets",
+  "wide_beam_max_range_mi": 5.0,
+  "narrow_beam_min_range_mi": 1.0,
+  "narrow_full_angles_deg": [
+    1.0,
+    3.0,
+    5.0
+  ],
+  "wide_full_angles_deg": [
+    15.0,
+    22.5,
+    30.0
+  ],
+  "specified_full_angles_deg": [
+    3.0
+  ],
+  "beam_quality_m2": 1.0,
+  "max_paraxial_half_angle_rad": 0.3
+}

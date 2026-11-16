@@ -1,0 +1,163 @@
+{
+  "model_version": "1.1",
+  "rows": 122472,
+  "config": {
+    "frequencies_ghz": {
+      "UHF": [
+        0.5
+      ],
+      "L": [
+        1.5
+      ],
+      "S": [
+        3.0
+      ],
+      "C": [
+        6.0
+      ],
+      "X": [
+        10.0
+      ],
+      "K": [
+        22.23508
+      ],
+      "Ka": [
+        35.0
+      ]
+    },
+    "altitudes_ft": [
+      0,
+      5000,
+      10000
+    ],
+    "path_geometry": "horizontal",
+    "slant_end_altitudes_ft": [
+      5000,
+      10000
+    ],
+    "slant_integration_steps": 64,
+    "density_scales": [
+      0.8,
+      1.0,
+      1.2
+    ],
+    "air_densities_kg_m3": null,
+    "temperature_k": null,
+    "weather_cases": [
+      {
+        "name": "clear",
+        "relative_humidity_pct": 50,
+        "liquid_water_g_m3": 0,
+        "cloud_path_fraction": 1
+      },
+      {
+        "name": "medium_fog",
+        "relative_humidity_pct": 100,
+        "liquid_water_g_m3": 0.05,
+        "cloud_path_fraction": 1
+      },
+      {
+        "name": "thick_fog",
+        "relative_humidity_pct": 100,
+        "liquid_water_g_m3": 0.5,
+        "cloud_path_fraction": 1
+      }
+    ],
+    "ranges": [
+      {
+        "value": 1000,
+        "unit": "ft"
+      },
+      {
+        "value": 3000,
+        "unit": "ft"
+      },
+      {
+        "value": 1,
+        "unit": "mi"
+      },
+      {
+        "value": 5,
+        "unit": "mi"
+      },
+      {
+        "value": 10,
+        "unit": "mi"
+      },
+      {
+        "value": 50,
+        "unit": "mi"
+      }
+    ],
+    "pulse_durations_ns": [
+      10,
+      100,
+      1000
+    ],
+    "peak_powers_w": [
+      1000.0,
+      1000000.0,
+      1000000000.0
+    ],
+    "initial_beam_diameters_m": [
+      0.2,
+      1.0,
+      2.0
+    ],
+    "divergence_mode": "range_presets",
+    "wide_beam_max_range_mi": 5.0,
+    "narrow_beam_min_range_mi": 1.0,
+    "narrow_full_angles_deg": [
+      1.0,
+      3.0,
+      5.0
+    ],
+    "wide_full_angles_deg": [
+      15.0,
+      22.5,
+      30.0
+    ],
+    "specified_full_angles_deg": [
+      3.0
+    ],
+    "beam_quality_m2": 1.0,
+    "max_paraxial_half_angle_rad": 0.3
+  },
+  "rows_skipped_impossible_geometry": 0,
+  "allow_invalid_beam_estimates": false,
+  "models": {
+    "gas": "ITU-R P.676-13 Annex 1 eqs. 1\u20139",
+    "cloud": "ITU-R P.840-9 Annex 1 eqs. 1\u201310 (local liquid water)",
+    "beam": "Gaussian 1/e^2 intensity diameter, source-plane waist"
+  },
+  "coefficient_sha256": {
+    "oxygen_lines.csv": "fe670186e4e92426f448ed2122ee9e07013c6dd198090f3a5a6eccd515354048",
+    "water_vapour_lines.csv": "5ad4d989295bd75d6164ba5e1487467ecbbd3d12dffff9508c60273e85642fce"
+  },
+  "sources": [
+    "https://www.itu.int/rec/R-REC-P.676-13-202208-I/en",
+    "https://www.itu.int/rec/R-REC-P.840-9-202308-I/en",
+    "https://github.com/inigodelportillo/ITU-Rpy",
+    "https://www.edmundoptics.com/knowledge-center/application-notes/lasers/gaussian-beam-propagation/",
+    "https://www.hygrometers.com/wp-content/uploads/CR-1A-users-manual-2009-12.pdf"
+  ],
+  "assumptions": [
+    "Straight unobstructed paths; horizontal uses one altitude, slant integrates a linear altitude profile.",
+    "Slant density scales follow local ISA; absolute density overrides impose a constant mass density.",
+    "Only liquid droplets in cloud/fog; cloud_path_fraction weights occupancy uniformly along the path.",
+    "Preset divergence angles are full 1/e^2 opening angles using the paraxial radian slope convention.",
+    "Rectangular temporal pulses evaluated at carrier frequency; no pulse distortion or dispersion.",
+    "Peak power is launched RF power in the Gaussian mode, not electrical input or EIRP.",
+    "Linear propagation; no rain, turbulence, refraction, terrain, curvature, plasma or thermal effects.",
+    "No antenna/receiver coupling. Transmitted power is whole-beam power after atmospheric absorption.",
+    "Below 1 GHz, ITU attenuation expressions are extrapolations outside their stated scope.",
+    "The paraxial angle threshold is a configurable heuristic, not an accuracy guarantee."
+  ],
+  "rows_outside_paraxial_limit": 0,
+  "rows_below_diffraction_limit": 53460,
+  "rows_without_valid_beam_prediction": 53460,
+  "beam_model_status_counts": {
+    "below_diffraction_limit": 53460,
+    "paraxial_estimate": 69012
+  }
+}
